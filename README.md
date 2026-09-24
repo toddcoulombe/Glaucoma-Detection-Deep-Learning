@@ -45,7 +45,7 @@ Tested whether giving greater weight to the underrepresented glaucoma class coul
 
 ### Experiment #3 — Partial Fine-Tuning
 Tested whether allowing the final ResNet50 block (Layer4) to adapt to the retinal images could improve performance while keeping the earlier layers frozen.
-
+![Experiment Comparison](experiment_comparison.png)
 ## Model Selection
 Model-selection conclusion: Experiment #2 (class weighting) was selected for final evaluation because it achieved the highest glaucoma recall (78.33%) across the validation predictions. Although its mean validation accuracy (73.44%) was lower than the baseline (76.37%) and partial fine-tuning experiment (79.93%), the project prioritized reducing missed glaucoma cases rather than maximizing overall accuracy.
 
@@ -62,7 +62,7 @@ After Experiment #2 was selected, a final class-weighted ResNet50 model was trai
 - **Normal incorrectly flagged as glaucoma:** 27 of 94
 
 The final model detected a substantial majority of the glaucoma images in the test set, while producing more false-positive glaucoma predictions as a tradeoff for prioritizing glaucoma detection.
-
+![Final Test Results](final_test_results.png)
 ## Key Takeaway
 The experiment with the highest overall validation accuracy was not the experiment selected for final evaluation. Partial fine-tuning achieved the highest mean validation accuracy at 79.93%, but its glaucoma recall was only 51.67%. Class weighting produced a lower mean validation accuracy of 73.44% but substantially higher glaucoma recall of 78.33%. Because the project prioritized reducing missed glaucoma cases, the class-weighted approach was selected.
 
